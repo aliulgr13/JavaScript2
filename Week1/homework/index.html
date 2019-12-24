@@ -1,1 +1,114 @@
-<!-- replace this with your HTML content -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Random Quote Generator</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="quote">
+        <blockquote class="blockquote"><p class="quotePara"></p></blockquote>
+      </div>
+      <div class="author">
+        <p class="authorPara"></p>
+      </div>
+      <div class="social">
+        <button id="btn">New Quote</button>
+        <ul class="socialList">
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="48"
+              height="48"
+              viewBox="0 0 172 172"
+              style=" fill:#000000;"
+            >
+              <g
+                fill="none"
+                fill-rule="nonzero"
+                stroke="none"
+                stroke-width="1"
+                stroke-linecap="butt"
+                stroke-linejoin="miter"
+                stroke-miterlimit="10"
+                stroke-dasharray=""
+                stroke-dashoffset="0"
+                font-family="none"
+                font-weight="none"
+                font-size="none"
+                text-anchor="none"
+                style="mix-blend-mode: normal"
+              >
+                <path d="M0,172v-172h172v172z" fill="none"></path>
+                <g>
+                  <path
+                    d="M150.5,132.58333c0,9.89717 -8.02308,17.91667 -17.91667,17.91667h-93.16667c-9.89717,0 -17.91667,-8.0195 -17.91667,-17.91667v-93.16667c0,-9.89717 8.0195,-17.91667 17.91667,-17.91667h93.16667c9.89358,0 17.91667,8.0195 17.91667,17.91667z"
+                    fill="#ffa500"
+                  ></path>
+                  <path
+                    d="M129,61.34667c-3.1605,1.40108 -7.16308,2.71617 -10.75,3.15333c3.64783,-2.16433 9.43492,-6.67217 10.75,-10.75c-3.40775,2.00308 -9.57108,4.14233 -13.59158,4.91633c-3.21067,-3.40417 -7.79017,-4.91633 -12.86417,-4.91633c-9.74667,0 -16.54425,8.25958 -16.54425,17.91667v7.16667c-14.33333,0 -28.30833,-10.91842 -37.00508,-21.5c-1.53008,2.58358 -2.39008,5.60792 -2.39008,8.80425c0,6.51808 5.98775,13.13292 10.7285,16.27908c-2.89175,-0.08958 -8.36708,-2.29692 -10.75,-3.58333c0,0.05733 0,0.129 0,0.20425c0,8.48175 5.95192,14.24017 14.018,15.8455c-1.47275,0.40492 -3.268,1.86692 -10.17667,1.86692c2.24317,6.93375 13.51992,10.5995 21.242,10.75c-6.0415,4.68342 -16.813,7.16667 -25.08333,7.16667c-1.42975,0 -2.20375,0.07883 -3.58333,-0.08242c7.8045,4.945 18.705,7.24908 28.66667,7.24908c32.45425,0 50.16667,-24.7895 50.16667,-47.90917c0,-0.75967 -0.02508,-3.30383 -0.0645,-4.04917c3.46867,-2.44383 4.87333,-5.00233 7.23117,-8.52833"
+                    fill="#ffffff"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </li>
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="48"
+              height="48"
+              viewBox="0 0 226 226"
+              style=" fill:#000000;"
+            >
+              <g
+                fill="none"
+                fill-rule="nonzero"
+                stroke="none"
+                stroke-width="1"
+                stroke-linecap="butt"
+                stroke-linejoin="miter"
+                stroke-miterlimit="10"
+                stroke-dasharray=""
+                stroke-dashoffset="0"
+                font-family="none"
+                font-weight="none"
+                font-size="none"
+                text-anchor="none"
+                style="mix-blend-mode: normal"
+              >
+                <path d="M0,226v-226h226v226z" fill="none"></path>
+                <g>
+                  <path
+                    d="M197.75,174.20833c0,13.00442 -10.53725,23.54167 -23.54167,23.54167h-122.41667c-12.99971,0 -23.54167,-10.53725 -23.54167,-23.54167v-122.41667c0,-13.00442 10.54196,-23.54167 23.54167,-23.54167h122.41667c13.00442,0 23.54167,10.53725 23.54167,23.54167z"
+                    fill="#ffa500"
+                  ></path>
+                  <path
+                    d="M150.66667,164.27846c0,0.44729 -0.17421,0.86633 -0.51321,1.16296c-0.41433,0.36254 -10.20767,8.76692 -32.69467,8.76692c-26.95992,0 -27.74621,-30.17571 -27.74621,-33.62221l-0.25425,-37.00279h-12.58067c-0.85692,0 -1.54433,-0.69212 -1.54433,-1.54904v-14.60054c0,-0.63563 0.39079,-1.21946 0.97933,-1.45488c0.24483,-0.09417 24.34679,-9.80746 24.34679,-32.64287c0,-0.86162 0.68742,-1.54904 1.53963,-1.54904h13.96492c0.85692,0.00471 1.54433,0.69213 1.54433,1.55375v31.40929h26.69625c0.85692,0 1.55375,0.68742 1.55375,1.54433v15.74937c0,0.86163 -0.69683,1.53963 -1.55375,1.53963h-26.69625v36.30596c0,0.47554 1.48783,11.86029 12.995,11.86029c9.52496,0 17.51971,-4.9155 17.60917,-4.96729c0.47083,-0.30133 1.06879,-0.31075 1.56787,-0.04238c0.48496,0.26838 0.78629,0.791 0.78629,1.36071v16.17783z"
+                    fill="#ffffff"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="small"></div>
+
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

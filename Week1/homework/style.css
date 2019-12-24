@@ -1,1 +1,90 @@
 /* add your styling here */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #ffa500;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  width: 75vw;
+  height: 55vh;
+  background-color: white;
+  position: relative;
+  color: #ffa500;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 50px;
+}
+.small {
+  width: 25vw;
+  height: 10vh;
+  background-color: white;
+  margin-top: 5px;
+}
+.quote {
+  width: 90%;
+  height: 5vh;
+  position: absolute;
+  top: 17vh;
+  margin: 0, 50px;
+}
+.author {
+  width: 90%;
+  height: 5vh;
+  position: absolute;
+  top: 30vh;
+  font-size: 1.2rem;
+}
+.social {
+  width: 90%;
+  height: 5vh;
+  position: absolute;
+  top: 40vh;
+}
+.authorPara {
+  float: right;
+}
+.socialList {
+  list-style: none;
+  float: left;
+}
+.socialList li {
+  float: left;
+}
+#btn {
+  float: right;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  padding: 14px 21px;
+  border: 1px solid #c7870f;
+  border-radius: 0px;
+  background: #ffa600;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+.blockquote {
+  padding: 15px 60px;
+  position: relative;
+  display: none;
+}
+
+.blockquote:before {
+  position: absolute;
+  font-family: 'FontAwesome';
+  top: 0;
+  left: 0;
+  content: '\f10d';
+  font-size: 50px;
+  color: #ffa600;
+}
