@@ -11,13 +11,16 @@
       src="http://www.anniemation.com/clip_art/images/cat-walk.gif"
     />
     <script>
-      let img = document.querySelector('img');
+      const img = document.querySelector('img');
+      const intViewportWidth = window.innerWidth;
+
       const catWalk = function() {
-        img.style.left = parseInt(img.style.left || 0) + 10 + 'px';
-        if (img.style.left === '1350px') {
+        let leftOfImg = img.offsetLeft;
+        img.style.left = img.offsetLeft + 10 + 'px';
+        if (leftOfImg === intViewportWidth) {
           img.style.left = 0;
         } else {
-          if (img.style.left === '550px') {
+          if (leftOfImg === intViewportWidth / 2.5) {
             const changeImg = function() {
               img.srcset = 'https://acegif.com/wp-content/gifs/dancing-cat-52.gif';
             };
@@ -25,7 +28,7 @@
             const returnImg = function() {
               img.srcset = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
             };
-            let timer2 = setTimeout(returnImg, 5000);
+            const timer2 = setTimeout(returnImg, 5000);
           }
         }
       };

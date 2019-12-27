@@ -16,8 +16,7 @@ const array = [
     author: 'Rumi',
   },
   {
-    quote:
-      'War is delightful to those who have had no experience of it.',
+    quote: 'War is delightful to those who have had no experience of it.',
     author: 'Desiderius Erasmus Roterodamus',
   },
   {
@@ -29,23 +28,46 @@ const array = [
     author: 'Jim Rohn',
   },
 ];
-let quote = document.querySelector('.quotePara');
-let author = document.querySelector('.authorPara');
-let button = document.getElementById('btn');
-let blockquote = document.querySelector('.blockquote');
+const quote = document.querySelector('.quotePara');
+const author = document.querySelector('.authorPara');
+const button = document.getElementById('btn');
+const blockquote = document.querySelector('.blockquote');
+
+
+//I have made this solution with do while to avoid getting the same quote one after another.
+
+let number = [];
 
 const randomQuote = function () {
   blockquote.style.display = 'inline-block';
+  let randomNumber;
 
-  let x = Math.floor(Math.random() * (array.length - 1));
-  //I have made this statement to avoid getting the same quote in a row.
-  if (quote.innerText !== array[x].quote) {
-    quote.innerText = array[x].quote;
-    author.innerText = '- ' + array[x].author;
-  } else {
-    quote.innerText = array[array.length - 1].quote;
-    author.innerText = '- ' + array[array.length - 1].author;
-  }
+  do {
+    randomNumber = Math.floor(Math.random() * array.length);
+  } while (number[number.length - 1] === randomNumber);
+
+  number.push(randomNumber);
+  console.log(randomNumber);
+  quote.innerText = array[randomNumber].quote;
+  author.innerText = '- ' + array[randomNumber].author;
 };
+
+
+//Second solution with if statement.
+
+
+// const randomQuote = function () {
+//   blockquote.style.display = 'inline-block';
+
+//   let x = Math.floor(Math.random() * (array.length - 1));
+//   //I have made this statement to avoid getting the same quote one after another.
+//   if (quote.innerText !== array[x].quote) {
+//     quote.innerText = array[x].quote;
+//     author.innerText = '- ' + array[x].author;
+//   } else {
+//     quote.innerText = array[array.length - 1].quote;
+//     author.innerText = '- ' + array[array.length - 1].author;
+//   }
+// };
 
 button.addEventListener('click', randomQuote);
